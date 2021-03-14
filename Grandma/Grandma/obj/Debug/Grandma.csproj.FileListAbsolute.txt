@@ -1,0 +1,4 @@
+D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.csprojAssemblyReference.cache
+D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.Properties.Resources.resources
+D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.csproj.GenerateResource.cache
+D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.csproj.CoreCompileInputs.cache
