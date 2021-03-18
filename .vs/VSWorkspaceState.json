@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Grandma",
+    "\\Grandma\\Grandma"
   ],
+  "SelectedNode": "\\Grandma\\Grandma.sln",
   "PreviewInSolutionExplorer": false
 }
