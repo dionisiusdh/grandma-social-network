@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Grandma
 {
@@ -61,6 +63,69 @@ namespace Grandma
 			for (int i = 0; i < n_node; i++) 
 			{
 				Console.WriteLine(nodes[i].name);
+			}
+		}
+
+		public int findIdxNode(string s)
+		{
+			int i = 0;
+			bool found = false;
+			while (i<n_node && !found)
+			{
+				if (nodes[i].name == s)
+				{
+					found = true;
+				}
+				else 
+				{
+					i += 1;
+				}
+			}
+			if (!found)
+			{
+				return -1;
+			}
+			else 
+			{
+				return i;
+			}
+		}
+
+		public void initNodes(string[] input)
+		{
+			foreach (String line in input)
+			{
+
+				string[] temp = line.Split(" ");
+				if (temp.Count() == 2)
+				{
+					if (this.findIdxNode(temp[0]) == -1)
+					{
+						addNode(temp[0]);
+					}
+					if (this.findIdxNode(temp[1]) == -1)
+					{
+						addNode(temp[1]);
+					}
+				}
+			}
+		}
+
+		public void sortNode()
+		{
+			Array.Sort(nodes, delegate (Node x, Node y) { return x.name.CompareTo(y.name); });
+		}
+
+		public void initEdges(string[] input) 
+		{
+			foreach (String line in input)
+			{
+
+				string[] temp = line.Split(" ");
+				if (temp.Count() == 2)
+				{
+					addEdge(findIdxNode(temp[0]), findIdxNode(temp[1]));
+				}
 			}
 		}
 
