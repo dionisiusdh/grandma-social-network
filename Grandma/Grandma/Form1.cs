@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +14,53 @@ namespace Grandma
 {
     public partial class Form1 : Form
     {
+        private Graph G;
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void handleGraphFile()
+        {
+            string input = Console.ReadLine();
+            string filePath = @"../../test/" + label9.Text;
+            string[] lines = File.ReadAllLines(filePath);
+
+            //Menghitung jumlah node
+            ArrayList temp1 = new ArrayList();
+            foreach (String line in lines)
+            {
+                string[] temp2 = line.Split(' ');
+                if (temp2.Count() == 2)
+                {
+                    if (temp1.IndexOf(temp2[0]) == -1)
+                    {
+                        temp1.Add(temp2[0]);
+                    }
+                    if (temp1.IndexOf(temp2[1]) == -1)
+                    {
+                        temp1.Add(temp2[1]);
+                    }
+                }
+            }
+            int jumlah_node = temp1.Count;
+
+            //Inisialisasi Graf
+            this.G = new Grandma.Graph(jumlah_node);
+            G.initNodes(lines);
+            G.sortNode();
+            G.initEdges(lines);
+
+            // Update dropdown items
+            string [] all_nodes = G.getAllNodesInArray();
+            dropdownAcc.Items.Clear();
+            dropdownFriend.Items.Clear();
+
+            foreach (string node in all_nodes)
+            {
+                dropdownAcc.Items.Add(node);
+                dropdownFriend.Items.Add(node);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,10 +73,14 @@ namespace Grandma
             openfile.FilterIndex = 2;
             openfile.RestoreDirectory = true;
             
+            // Update label
             if (openfile.ShowDialog() == DialogResult.OK)
             {
                 label9.Text = System.IO.Path.GetFileName(openfile.FileName);
             }
+
+            // Buat graph berdasarkan graph file
+            handleGraphFile();
         }
 
         private void Form1_Load(object sender, EventArgs e)

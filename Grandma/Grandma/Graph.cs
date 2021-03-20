@@ -33,7 +33,6 @@ namespace Grandma
 				n_node += 1;
 			}
 		}
-
 		public void addEdge(int node_a_pos, int node_b_pos)
 		{
 			m[node_a_pos, node_b_pos] = 1;
@@ -66,6 +65,31 @@ namespace Grandma
 			}
 		}
 
+		public string getAllNodesInString()
+		{
+			// Mereturn node yang ada dalam bentuk string
+			string all_nodes = "";
+
+			for (int i = 0; i < n_node; i++)
+			{
+				all_nodes += nodes[i].name;
+			}
+			return all_nodes;
+		}
+
+		public string[] getAllNodesInArray()
+		{
+			// Mereturn node yang ada dalam bentuk array / list
+			string[] nodes_names = new string[n_max];
+
+			for (int i = 0; i < n_node; i++)
+			{
+                nodes_names[i] = nodes[i].name;
+			}
+
+			return nodes_names;
+		}
+
 		public int findIdxNode(string s)
 		{
 			int i = 0;
@@ -90,7 +114,6 @@ namespace Grandma
 				return i;
 			}
 		}
-
 		public void initNodes(string[] input)
 		{
 			foreach (String line in input)
@@ -109,12 +132,10 @@ namespace Grandma
 				}
 			}
 		}
-
 		public void sortNode()
 		{
 			Array.Sort(nodes, delegate (Node x, Node y) { return x.name.CompareTo(y.name); });
 		}
-
 		public void initEdges(string[] input) 
 		{
 			foreach (String line in input)

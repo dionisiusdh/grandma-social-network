@@ -29,7 +29,8 @@ namespace Grandma
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.title = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -37,23 +38,26 @@ namespace Grandma
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.pGambar = new System.Windows.Forms.Panel();
+            this.dropdownAcc = new System.Windows.Forms.ComboBox();
+            this.dropdownFriend = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // title
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(246, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 36);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Grandma";
+            this.title.AutoSize = true;
+            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Location = new System.Drawing.Point(346, 9);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(144, 36);
+            this.title.TabIndex = 0;
+            this.title.Text = "Grandma";
             // 
             // label2
             // 
@@ -65,7 +69,7 @@ namespace Grandma
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 114);
+            this.label4.Location = new System.Drawing.Point(36, 106);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 17);
             this.label4.TabIndex = 2;
@@ -74,7 +78,7 @@ namespace Grandma
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 69);
+            this.label5.Location = new System.Drawing.Point(36, 61);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 17);
             this.label5.TabIndex = 3;
@@ -83,7 +87,7 @@ namespace Grandma
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(148, 110);
+            this.radioButton1.Location = new System.Drawing.Point(149, 102);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(56, 21);
             this.radioButton1.TabIndex = 4;
@@ -94,7 +98,7 @@ namespace Grandma
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(234, 110);
+            this.radioButton2.Location = new System.Drawing.Point(235, 102);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(55, 21);
             this.radioButton2.TabIndex = 5;
@@ -105,44 +109,24 @@ namespace Grandma
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(35, 507);
+            this.label6.Location = new System.Drawing.Point(40, 506);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 17);
+            this.label6.Size = new System.Drawing.Size(138, 17);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Choose account:";
+            this.label6.Text = "Choose account      :";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 543);
+            this.label7.Location = new System.Drawing.Point(40, 551);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 17);
+            this.label7.Size = new System.Drawing.Size(142, 17);
             this.label7.TabIndex = 7;
-            this.label7.Text = "Explore friends with: ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(35, 583);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(238, 17);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Friend recommendation for      :";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(241, 583);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(23, 17);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "...";
+            this.label7.Text = "Explore friends with : ";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(146, 66);
+            this.button1.Location = new System.Drawing.Point(147, 58);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 10;
@@ -153,7 +137,7 @@ namespace Grandma
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(231, 72);
+            this.label9.Location = new System.Drawing.Point(232, 64);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(20, 17);
             this.label9.TabIndex = 11;
@@ -161,7 +145,7 @@ namespace Grandma
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(38, 151);
+            this.button2.Location = new System.Drawing.Point(39, 143);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 12;
@@ -172,21 +156,64 @@ namespace Grandma
             // pGambar
             // 
             this.pGambar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pGambar.Location = new System.Drawing.Point(38, 180);
+            this.pGambar.Location = new System.Drawing.Point(39, 172);
             this.pGambar.Name = "pGambar";
             this.pGambar.Size = new System.Drawing.Size(772, 303);
             this.pGambar.TabIndex = 13;
+            // 
+            // dropdownAcc
+            // 
+            this.dropdownAcc.FormattingEnabled = true;
+            this.dropdownAcc.Items.AddRange(new object[] {
+            "Masukkan file"});
+            this.dropdownAcc.Location = new System.Drawing.Point(188, 499);
+            this.dropdownAcc.Name = "dropdownAcc";
+            this.dropdownAcc.Size = new System.Drawing.Size(121, 24);
+            this.dropdownAcc.TabIndex = 14;
+            // 
+            // dropdownFriend
+            // 
+            this.dropdownFriend.FormattingEnabled = true;
+            this.dropdownFriend.Items.AddRange(new object[] {
+            "Masukkan file"});
+            this.dropdownFriend.Location = new System.Drawing.Point(188, 548);
+            this.dropdownFriend.Name = "dropdownFriend";
+            this.dropdownFriend.Size = new System.Drawing.Size(121, 24);
+            this.dropdownFriend.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(40, 608);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(238, 17);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Friend recommendation for      :";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ImageLocation = "D:\\K. Stima\\Tugas\\Tubes 2\\new\\tubes-2-stima\\Grandma\\Grandma\\assets\\grandma-pic.pn" +
+    "g";
+            this.pictureBox1.Location = new System.Drawing.Point(718, 58);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(93, 88);
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 843);
+            this.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.ClientSize = new System.Drawing.Size(861, 780);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.dropdownFriend);
+            this.Controls.Add(this.dropdownAcc);
             this.Controls.Add(this.pGambar);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -195,11 +222,13 @@ namespace Grandma
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.title);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grandma | Social Network";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,7 +236,7 @@ namespace Grandma
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label title;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -215,12 +244,14 @@ namespace Grandma
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel pGambar;
+        private System.Windows.Forms.ComboBox dropdownAcc;
+        private System.Windows.Forms.ComboBox dropdownFriend;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
