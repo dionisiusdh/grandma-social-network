@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,14 +19,14 @@ namespace Grandma
             //Read File 
             Console.Write("Nama File : ");
             string input = Console.ReadLine();
-            string filePath = @"../../" + input;
+            string filePath = @"../../Test.txt";
             string[] lines = File.ReadAllLines(filePath);
 
             //Menghitung jumlah node
             ArrayList temp1 = new ArrayList();
             foreach (String line in lines)
             {
-                string[] temp2 = line.Split(" ");
+                string[] temp2 = line.Split(' ');
                 if (temp2.Count() == 2)
                 {
                     if (temp1.IndexOf(temp2[0]) == -1)

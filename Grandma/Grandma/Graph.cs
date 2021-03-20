@@ -16,9 +16,9 @@ namespace Grandma
 		// Hanya untuk algoritma DFS
 		private Stack<int> s;
 
-		public Graph()
+		public Graph(int max)
 		{
-			n_max = 50;
+			n_max = max;
 			n_node = 0;
 			s = new Stack<int>();
 			nodes = new Node[n_max];
@@ -95,8 +95,7 @@ namespace Grandma
 		{
 			foreach (String line in input)
 			{
-
-				string[] temp = line.Split(" ");
+				string[] temp = line.Split(' ');
 				if (temp.Count() == 2)
 				{
 					if (this.findIdxNode(temp[0]) == -1)
@@ -120,8 +119,7 @@ namespace Grandma
 		{
 			foreach (String line in input)
 			{
-
-				string[] temp = line.Split(" ");
+				string[] temp = line.Split(' ');
 				if (temp.Count() == 2)
 				{
 					addEdge(findIdxNode(temp[0]), findIdxNode(temp[1]));
