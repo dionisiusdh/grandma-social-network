@@ -41,6 +41,8 @@ namespace Grandma
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pGambar = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -103,7 +105,7 @@ namespace Grandma
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 368);
+            this.label6.Location = new System.Drawing.Point(35, 507);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 17);
             this.label6.TabIndex = 6;
@@ -112,7 +114,7 @@ namespace Grandma
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 404);
+            this.label7.Location = new System.Drawing.Point(35, 543);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(138, 17);
             this.label7.TabIndex = 7;
@@ -122,7 +124,7 @@ namespace Grandma
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 444);
+            this.label3.Location = new System.Drawing.Point(35, 583);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(238, 17);
             this.label3.TabIndex = 8;
@@ -132,7 +134,7 @@ namespace Grandma
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(234, 444);
+            this.label8.Location = new System.Drawing.Point(241, 583);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(23, 17);
             this.label8.TabIndex = 9;
@@ -157,11 +159,31 @@ namespace Grandma
             this.label9.TabIndex = 11;
             this.label9.Text = "...";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(38, 151);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Visualize Graph";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // pGambar
+            // 
+            this.pGambar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pGambar.Location = new System.Drawing.Point(38, 180);
+            this.pGambar.Name = "pGambar";
+            this.pGambar.Size = new System.Drawing.Size(772, 303);
+            this.pGambar.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 688);
+            this.ClientSize = new System.Drawing.Size(843, 843);
+            this.Controls.Add(this.pGambar);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label8);
@@ -175,7 +197,9 @@ namespace Grandma
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Grandma";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Grandma | Social Network";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,6 +219,8 @@ namespace Grandma
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel pGambar;
     }
 }
 
