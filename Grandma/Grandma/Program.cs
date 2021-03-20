@@ -16,10 +16,14 @@ namespace Grandma
         [STAThread]
         static void Main(string[] args)
         {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
+
             //Read File 
             Console.Write("Nama File : ");
             string input = Console.ReadLine();
-            string filePath = @"../../Test.txt";
+            string filePath = @"../../test/"; //+ label9.Text;
             string[] lines = File.ReadAllLines(filePath);
 
             //Menghitung jumlah node
@@ -53,10 +57,6 @@ namespace Grandma
             Console.WriteLine("Visits: ");
             G.dfs();
             Console.ReadLine();
-
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
         }
     }
 }

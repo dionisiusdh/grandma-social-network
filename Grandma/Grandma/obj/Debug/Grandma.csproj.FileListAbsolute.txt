@@ -16,3 +16,18 @@ C:\Users\jorda\Desktop\tubes-2-stima\Grandma\Grandma\bin\Debug\Microsoft.Msagl.W
 C:\Users\jorda\Desktop\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.csproj.CopyComplete
 C:\Users\jorda\Desktop\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.exe
 C:\Users\jorda\Desktop\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.pdb
+D:\K. Stima\Tugas\Tubes 2\new\tubes-2-stima\Grandma\Grandma\bin\Debug\Grandma.exe.config
+D:\K. Stima\Tugas\Tubes 2\new\tubes-2-stima\Grandma\Grandma\bin\Debug\Grandma.exe
+D:\K. Stima\Tugas\Tubes 2\new\tubes-2-stima\Grandma\Grandma\bin\Debug\Grandma.pdb
+D:\K. Stima\Tugas\Tubes 2\new\tubes-2-stima\Grandma\Grandma\bin\Debug\AutomaticGraphLayout.dll
+D:\K. Stima\Tugas\Tubes 2\new\tubes-2-stima\Grandma\Grandma\bin\Debug\AutomaticGraphLayout.Drawing.dll
+D:\K. Stima\Tugas\Tubes 2\new\tubes-2-stima\Grandma\Grandma\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
+D:\K. Stima\Tugas\Tubes 2\new\tubes-2-stima\Grandma\Grandma\bin\Debug\Microsoft.Msagl.WpfGraphControl.dll
+D:\K. Stima\Tugas\Tubes 2\new\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.csprojAssemblyReference.cache
+D:\K. Stima\Tugas\Tubes 2\new\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.Properties.Resources.resources
+D:\K. Stima\Tugas\Tubes 2\new\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.csproj.GenerateResource.cache
+D:\K. Stima\Tugas\Tubes 2\new\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.csproj.CoreCompileInputs.cache
+D:\K. Stima\Tugas\Tubes 2\new\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.csproj.CopyComplete
+D:\K. Stima\Tugas\Tubes 2\new\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.exe
+D:\K. Stima\Tugas\Tubes 2\new\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.pdb
+D:\K. Stima\Tugas\Tubes 2\new\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.Form1.resources

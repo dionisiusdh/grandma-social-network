@@ -16,5 +16,20 @@ namespace Grandma
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openfile = new OpenFileDialog();
+            openfile.Title = "Browse file graph";
+            openfile.InitialDirectory = @"D:\";
+            openfile.Filter = "All files (*.*)|*.*|All files (*.*)|*.*";
+            openfile.FilterIndex = 2;
+            openfile.RestoreDirectory = true;
+            
+            if (openfile.ShowDialog() == DialogResult.OK)
+            {
+                label9.Text = System.IO.Path.GetFileName(openfile.FileName);
+            }
+        }
     }
 }
