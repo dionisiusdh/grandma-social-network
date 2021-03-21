@@ -251,7 +251,6 @@ namespace Grandma
 		{
 			Node[] prev = new Node[n_node];
 			prev = solve(s);
-			buatDebug += "Uda berhasil FR BFS";
 			return reconstructPath(s,e,prev);
 		}
 
@@ -321,20 +320,20 @@ namespace Grandma
 			{ 
 				path.Enqueue(at);
 			}
-			for (int i=0; i<n_node; i++)
+			Queue<Node> hasil = new Queue<Node>();
+			foreach (Node n in path.Reverse()) 
 			{ 
-				Node n = path.Dequeue();
-				path.Enqueue(n);
+				hasil.Enqueue(n);
 			}
 			
-			if (path.Peek() == s)
+			if (hasil.Peek() == s)
 			{ 
-				return path;
+				return hasil;
 			}
             else 
 			{ 
-				path.Clear();
-				return path;
+				hasil.Clear();
+				return hasil;
 			}
 		}
 
