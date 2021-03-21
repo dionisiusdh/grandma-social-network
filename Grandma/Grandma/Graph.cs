@@ -92,6 +92,16 @@ namespace Grandma
 			return nodes_names;
 		}
 
+		public int[,] getAdjMatrix()
+        {
+			return m;
+        }
+
+		public int getNNode()
+        {
+			return n_node;
+        }
+
 		public int findIdxNode(string s)
 		{
 			int i = 0;

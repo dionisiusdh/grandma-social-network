@@ -40,7 +40,6 @@ namespace Grandma
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.pGambar = new System.Windows.Forms.Panel();
             this.dropdownAcc = new System.Windows.Forms.ComboBox();
             this.dropdownFriend = new System.Windows.Forms.ComboBox();
@@ -143,22 +142,12 @@ namespace Grandma
             this.label9.TabIndex = 11;
             this.label9.Text = "...";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(39, 143);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Visualize Graph";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // pGambar
             // 
             this.pGambar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pGambar.Location = new System.Drawing.Point(39, 172);
+            this.pGambar.Location = new System.Drawing.Point(39, 152);
             this.pGambar.Name = "pGambar";
-            this.pGambar.Size = new System.Drawing.Size(772, 303);
+            this.pGambar.Size = new System.Drawing.Size(772, 323);
             this.pGambar.TabIndex = 13;
             // 
             // dropdownAcc
@@ -211,7 +200,6 @@ namespace Grandma
             this.Controls.Add(this.dropdownFriend);
             this.Controls.Add(this.dropdownAcc);
             this.Controls.Add(this.pGambar);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -246,7 +234,6 @@ namespace Grandma
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel pGambar;
         private System.Windows.Forms.ComboBox dropdownAcc;
         private System.Windows.Forms.ComboBox dropdownFriend;

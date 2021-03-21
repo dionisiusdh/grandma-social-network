@@ -12,9 +12,8 @@ namespace Grandma
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        public Form2(Graph G)
         {
-            // InitializeComponent();
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 
             // Create a viewer object 
@@ -24,24 +23,42 @@ namespace Grandma
             Microsoft.Msagl.Drawing.Graph graph = new Microsoft.Msagl.Drawing.Graph("graph");
 
             // Create the graph content 
-            graph.AddEdge("A", "B");
-            graph.AddEdge("B", "C");
-            graph.AddEdge("A", "C").Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
-            graph.FindNode("A").Attr.FillColor = Microsoft.Msagl.Drawing.Color.Magenta;
-            graph.FindNode("B").Attr.FillColor = Microsoft.Msagl.Drawing.Color.MistyRose;
-            Microsoft.Msagl.Drawing.Node c = graph.FindNode("C");
-            c.Attr.FillColor = Microsoft.Msagl.Drawing.Color.PaleGreen;
-            c.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Diamond;
+            string[] all_nodes = G.getAllNodesInArray();
+            int[,] m = G.getAdjMatrix();
 
+            for (int i = 0; i < G.getNNode(); i++)
+            {
+                for (int j = i+1; j < G.getNNode(); j++)
+                {
+                    if (m[i,j] == 1)
+                    {
+                        graph.AddEdge(all_nodes[i], all_nodes[j]).Attr.ArrowheadAtTarget = Microsoft.Msagl.Drawing.ArrowStyle.None;
+
+                        if (i%2 == 0)
+                        {
+                            graph.FindNode(all_nodes[i]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Aquamarine;
+                        } else
+                        {
+                            graph.FindNode(all_nodes[j]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.LightCoral;
+                        }
+                        graph.FindNode(all_nodes[i]).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Box;
+                        graph.FindNode(all_nodes[j]).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Box;
+                        graph.FindNode(all_nodes[i]).Label.FontSize = 20;
+                        graph.FindNode(all_nodes[j]).Label.FontSize = 20;
+                    }
+                }
+            }
             // Bind the graph to the viewer 
             viewer.Graph = graph;
+
+            // Change all color to white
+            viewer.OutsideAreaBrush = Brushes.White;
+
             // Associate the viewer with the form 
             this.SuspendLayout();
             viewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Controls.Add(viewer);
             this.ResumeLayout();
-            // Show the form 
-            //this.ShowDialog();
         }
     }
 }

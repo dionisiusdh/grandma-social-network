@@ -61,6 +61,11 @@ namespace Grandma
                 dropdownAcc.Items.Add(node);
                 dropdownFriend.Items.Add(node);
             }
+
+            // Langsung visualisasi graph
+            Form2 gambar = new Form2(G) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.pGambar.Controls.Add(gambar);
+            gambar.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -90,9 +95,9 @@ namespace Grandma
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form2 gambar = new Form2() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.pGambar.Controls.Add(gambar);
-            gambar.Show();
+            //Form2 gambar = new Form2(G) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            //this.pGambar.Controls.Add(gambar);
+            //gambar.Show();
         }
     }
 }
