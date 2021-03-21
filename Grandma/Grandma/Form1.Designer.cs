@@ -45,6 +45,11 @@ namespace Grandma
             this.dropdownFriend = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelFER = new System.Windows.Forms.Label();
+            this.buttonRun = new System.Windows.Forms.Button();
+            this.test = new System.Windows.Forms.Label();
+            this.test2 = new System.Windows.Forms.Label();
+            this.tbFER = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,7 +179,7 @@ namespace Grandma
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(40, 608);
+            this.label3.Location = new System.Drawing.Point(40, 636);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(238, 17);
             this.label3.TabIndex = 8;
@@ -190,12 +195,61 @@ namespace Grandma
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
+            // labelFER
+            // 
+            this.labelFER.AutoSize = true;
+            this.labelFER.Location = new System.Drawing.Point(40, 670);
+            this.labelFER.Name = "labelFER";
+            this.labelFER.Size = new System.Drawing.Size(20, 17);
+            this.labelFER.TabIndex = 17;
+            this.labelFER.Text = "...";
+            // 
+            // buttonRun
+            // 
+            this.buttonRun.Location = new System.Drawing.Point(43, 596);
+            this.buttonRun.Name = "buttonRun";
+            this.buttonRun.Size = new System.Drawing.Size(75, 23);
+            this.buttonRun.TabIndex = 18;
+            this.buttonRun.Text = "Run";
+            this.buttonRun.UseVisualStyleBackColor = true;
+            this.buttonRun.Click += new System.EventHandler(this.buttonRun_Click);
+            // 
+            // test
+            // 
+            this.test.AutoSize = true;
+            this.test.Location = new System.Drawing.Point(444, 567);
+            this.test.Name = "test";
+            this.test.Size = new System.Drawing.Size(46, 17);
+            this.test.TabIndex = 19;
+            this.test.Text = "label1";
+            // 
+            // test2
+            // 
+            this.test2.AutoSize = true;
+            this.test2.Location = new System.Drawing.Point(516, 567);
+            this.test2.Name = "test2";
+            this.test2.Size = new System.Drawing.Size(46, 17);
+            this.test2.TabIndex = 20;
+            this.test2.Text = "label1";
+            // 
+            // tbFER
+            // 
+            this.tbFER.Location = new System.Drawing.Point(398, 621);
+            this.tbFER.Name = "tbFER";
+            this.tbFER.Size = new System.Drawing.Size(367, 22);
+            this.tbFER.TabIndex = 21;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(861, 780);
+            this.Controls.Add(this.tbFER);
+            this.Controls.Add(this.test2);
+            this.Controls.Add(this.test);
+            this.Controls.Add(this.buttonRun);
+            this.Controls.Add(this.labelFER);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dropdownFriend);
             this.Controls.Add(this.dropdownAcc);
@@ -239,6 +293,11 @@ namespace Grandma
         private System.Windows.Forms.ComboBox dropdownFriend;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label labelFER;
+        private System.Windows.Forms.Button buttonRun;
+        private System.Windows.Forms.Label test;
+        private System.Windows.Forms.Label test2;
+        private System.Windows.Forms.TextBox tbFER;
     }
 }
 

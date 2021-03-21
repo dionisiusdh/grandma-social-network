@@ -33,14 +33,8 @@ namespace Grandma
                     if (m[i,j] == 1)
                     {
                         graph.AddEdge(all_nodes[i], all_nodes[j]).Attr.ArrowheadAtTarget = Microsoft.Msagl.Drawing.ArrowStyle.None;
-
-                        if (i%2 == 0)
-                        {
-                            graph.FindNode(all_nodes[i]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Aquamarine;
-                        } else
-                        {
-                            graph.FindNode(all_nodes[j]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.LightCoral;
-                        }
+                        graph.FindNode(all_nodes[i]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Aquamarine;
+                        graph.FindNode(all_nodes[j]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Aquamarine;
                         graph.FindNode(all_nodes[i]).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Box;
                         graph.FindNode(all_nodes[j]).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Box;
                         graph.FindNode(all_nodes[i]).Label.FontSize = 20;

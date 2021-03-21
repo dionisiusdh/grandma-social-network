@@ -11,8 +11,9 @@ namespace Grandma
 		private int n_max;									// Jumlah node maksimum
 		private int n_node;									// Jumlah node yang ada
 		private Node[] nodes;								// List of nodes
-		private int[,] m;									// Adjacency matrix
-		
+		private int[,] m;                                   // Adjacency matrix
+		public string buatDebug;
+
 		// Stack algoritma dfs
 		private Stack<int> s;
 		// Queue algoritma bfs
@@ -159,10 +160,9 @@ namespace Grandma
 				}
 			}
 		}
-
 		public void dfs()
         {
-			resetIsVisited(); // reset all isVisited to false
+			resetIsVisited();			// reset all isVisited to false
 			nodes[0].isVisited = true;  // Mulai dari node 0
 			printNodeX(0);
 			s.Push(0);
@@ -211,13 +211,32 @@ namespace Grandma
             }
 
 		}
-
 		public Queue<Node> fr_bfs(Node s, Node e) 
 		{
 			Node[] prev = new Node[n_node];
 			prev = solve(s);
+			buatDebug += "Uda berhasil FR BFS";
 			return reconstructPath(s,e,prev);
 		}
+
+		public string getResult_fr_bfs(Queue<Node> Q)
+        {
+			string res = "";
+			int i = 0;
+
+			foreach (var elem in Q)
+			{
+				res += elem.name;
+				
+				if (i != Q.Count - 1)
+                {
+					res += " -> ";
+				}
+				i++;
+			}
+
+			return res;
+        }
 
 		public Queue<Node> getNeighbour (Node e) 
 		{ 

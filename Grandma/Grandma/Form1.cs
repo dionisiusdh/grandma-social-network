@@ -66,6 +66,7 @@ namespace Grandma
             Form2 gambar = new Form2(G) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.pGambar.Controls.Add(gambar);
             gambar.Show();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -98,6 +99,23 @@ namespace Grandma
             //Form2 gambar = new Form2(G) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             //this.pGambar.Controls.Add(gambar);
             //gambar.Show();
+        }
+
+        private void buttonRun_Click(object sender, EventArgs e)
+        {
+            // Friend explore
+            string fromName = dropdownAcc.GetItemText(this.dropdownAcc.SelectedItem);
+            string toName = dropdownFriend.GetItemText(this.dropdownFriend.SelectedItem);
+
+            Node fromNode = new Node(fromName);
+            Node toNode = new Node(toName);
+
+            string fe_result = G.getResult_fr_bfs(G.fr_bfs(fromNode, toNode));
+
+            test.Text = fromName;
+            test2.Text = toName;
+            labelFER.Text = fe_result;
+            tbFER.Text = G.buatDebug;
         }
     }
 }
