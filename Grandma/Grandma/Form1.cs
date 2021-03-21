@@ -94,20 +94,22 @@ namespace Grandma
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
-            // Friend explore
-
+            //  Init fromNode and toNode
+            
             string fromName = dropdownAcc.GetItemText(this.dropdownAcc.SelectedItem);
             string toName = dropdownFriend.GetItemText(this.dropdownFriend.SelectedItem);
 
             Node fromNode = new Node(fromName);
             Node toNode = new Node(toName);
 
-            string fe_result = g.getresult_fe_bfs(g.fe_bfs(fromNode, toNode));
+            // Friend explore
 
-            test.Text = fromName;
-            test2.Text = toName;
-            labelFER.Text = fe_result;
-            tbFER.Text = g.buatdebug;
+            //string fe_result = g.getresult_fe_bfs(g.fe_bfs(fromNode, toNode));
+
+            //test.Text = fromName;
+            //test2.Text = toName;
+            //labelFER.Text = fe_result;
+            //tbFER.Text = g.buatdebug;
 
             // Friend Recommendation
             // Main Program untuk Friend Recommendation dengan BFS
