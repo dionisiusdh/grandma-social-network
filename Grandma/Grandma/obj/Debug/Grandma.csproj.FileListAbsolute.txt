@@ -31,3 +31,4 @@ D:\K. Stima\Tugas\Tubes 2\new\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.cs
 D:\K. Stima\Tugas\Tubes 2\new\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.exe
 D:\K. Stima\Tugas\Tubes 2\new\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.pdb
 D:\K. Stima\Tugas\Tubes 2\new\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.Form1.resources
+C:\Users\jorda\Desktop\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.Form1.resources

@@ -212,6 +212,77 @@ namespace Grandma
 
 		}
 
+		public Queue<Node> fr_bfs(Node s, Node e) 
+		{
+			Node[] prev = new Node[n_node];
+			prev = solve(s);
+			return reconstructPath(s,e,prev);
+		}
+
+		public Queue<Node> getNeighbour (Node e) 
+		{ 
+			Queue<Node> neighbor = new Queue<Node>();
+			for (int i =0; i<n_node; i++) 
+			{ 
+				if (m[findIdxNode(e.name),i] == 1)
+                { 
+					neighbor.Enqueue(nodes[i]);
+				}
+			}
+			return neighbor;
+		}
+
+		public Node[] solve(Node s) 
+		{ 
+			//Inisialisasi
+			Queue<Node> q = new Queue<Node>();
+			q.Enqueue(s);
+			resetIsVisited();
+			nodes[findIdxNode(s.name)].isVisited = true;
+			Node[] prev = new Node[n_node];
+
+			//Looping buat cari parent node dari masing-masing array
+			while (q.Count != 0)
+            { 
+				Node n = q.Dequeue();
+				Queue<Node> neighbours = this.getNeighbour(n);
+				foreach (Node next in neighbours) 
+				{ 
+					if (next.isVisited == false)
+                    { 
+						q.Enqueue(next);
+						nodes[findIdxNode(next.name)].isVisited = true;
+						prev[findIdxNode(next.name)] = n;
+					}
+				}
+			}
+			return prev;
+		}
+
+		public Queue<Node> reconstructPath(Node s, Node e, Node[] prev) 
+		{ 
+			Queue<Node> path = new Queue<Node>();
+			for (Node at=e; at!=null; at = prev[findIdxNode(at.name)]) 
+			{ 
+				path.Enqueue(at);
+			}
+			for (int i=0; i<n_node; i++)
+			{ 
+				Node n = path.Dequeue();
+				path.Enqueue(n);
+			}
+			
+			if (path.Peek() == s)
+			{ 
+				return path;
+			}
+            else 
+			{ 
+				path.Clear();
+				return path;
+			}
+		}
+
 		public void resetIsVisited()
         {
 			foreach (Node n in nodes)
