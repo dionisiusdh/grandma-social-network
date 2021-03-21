@@ -13,8 +13,10 @@ namespace Grandma
 		private Node[] nodes;								// List of nodes
 		private int[,] m;									// Adjacency matrix
 		
-		// Hanya untuk algoritma DFS
+		// Stack algoritma dfs
 		private Stack<int> s;
+		// Queue algoritma bfs
+		private Queue<int> q;
 
 		public Graph(int max)
 		{
@@ -150,7 +152,8 @@ namespace Grandma
 
 		public void dfs()
         {
-            nodes[0].isVisited = true;  // Mulai dari node 0
+			resetIsVisited(); // reset all isVisited to false
+			nodes[0].isVisited = true;  // Mulai dari node 0
 			printNodeX(0);
 			s.Push(0);
 
@@ -167,6 +170,43 @@ namespace Grandma
                     printNodeX(curr_node);
                     s.Push(curr_node);
                 }
+            }
+        }
+
+		public void bfs(Node n)
+		{
+			resetIsVisited(); // reset all isVisited to false
+			int nodeIdx = findIdxNode(n.name);
+
+			nodes[nodeIdx].isVisited = true;
+			printNodeX(nodeIdx);
+			q.Enqueue(nodeIdx);
+
+			while (q.Count != 0)
+            {
+				nodeIdx = q.Dequeue();
+
+				if (nodes[nodeIdx].isVisited == false)
+                {
+					nodes[nodeIdx].isVisited = true;
+
+					int adjNodeIdx = 0;
+
+					while (adjNodeIdx != -1)
+                    {
+						adjNodeIdx = getAdjNode(nodeIdx);
+						q.Enqueue(adjNodeIdx);
+                    }
+                }
+            }
+
+		}
+
+		public void resetIsVisited()
+        {
+			foreach (Node n in nodes)
+            {
+				n.isVisited = false;
             }
         }
 	}
