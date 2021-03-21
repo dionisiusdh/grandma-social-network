@@ -183,12 +183,22 @@ namespace Grandma
             }
         }
 
-		public Node[] bfs(Node n, Node end)
+		public void initArray(int[] arr)
 		{
-			// declare resulting nodes array
-			Node[] resNodes = new Node[n_node];
-			
-			// reset all isVisited to false
+			for (int i = 0; i < arr.Length; i++)
+			{
+				arr[i] = -1;
+			}
+		}
+
+		public int[] bfs(Node n, Node end)
+		{
+			// declare resulting nodes array and queue
+			Queue<int> q = new Queue<int>();
+			int[] resNodeIdx = new int[n_node];
+
+			// initialize array all elements to -1 & reset all isVisited to false
+			initArray(resNodeIdx);
 			resetIsVisited();
 
 			// visit level 0
@@ -202,50 +212,63 @@ namespace Grandma
 
 			// variabel untuk indeks insert array
 			int array_insert = 0;
-			
+
+			// list penyimpan node level 1
+			List<int> levelOne = new List<int>();
+
 			// while loop selagi masih ada yang di queue DAN
-			// current level masih di level ke 2 atau kurang
-			while (q.Count != 0 && curr_level <= 2)
-            {
+			// current level masih di level ke jumlah anakan
+			// root node tambah satu atau kurang
+			while (q.Count != 0 && curr_level <= levelOne.Count()+1)
+			{
 				// get current node that is visited
 				nodeIdx = q.Dequeue();
 
 				// get all adjacent nodes
 				for (int i = 0; i < nodes.Length; i++)
-                {
+				{
 					// apabila ada penghubung, di level 2, DAN adj node = ending node
-					if (m[nodeIdx, i] == 1 && nodes[i].name == end.name && curr_level == 2)
-                    {
+					if (m[nodeIdx, i] == 1 && nodes[i].name == end.name && levelOne.Contains(nodeIdx))
+					{
 						// adding node that is mutual friends to resulting array
-						resNodes[array_insert] = nodes[nodeIdx];
+						resNodeIdx[array_insert] = nodeIdx;
 						array_insert++;
-                    }
+					}
 					// apabila ada penghubung, dan belum dikunjungi
 					if (m[nodeIdx, i] == 1 && (!nodes[i].isVisited))
-                    {
+					{
+						// mencatat elemen yang ada pada level pertama
+						if (curr_level == 1)
+                        {
+							levelOne.Add(i);
+                        }
 						// adding adj node to queue and setting visited to true
 						q.Enqueue(i);
 						nodes[i].isVisited = true;
-                    }
-                }
+					}
+				}
 
 				// next level
 				curr_level++;
-            }
-			return resNodes;
+			}
+			return resNodeIdx;
 		}
 
-		public string getResult_fr_bfs(Node[] N)
-        {
-			string res = " ";
+		public string getResult_fr_bfs(int[] N)
+		{
+			string res = "";
 
-			foreach (var node in N)
-            {
-				res += node.name;
-            }
+			foreach (int nodeIdx in N)
+			{
+				if (nodeIdx != -1)
+				{
+					res += nodes[nodeIdx].name;
+					res += " ";
+				}
+			}
 
 			return res;
-        }
+		}
 		
 		public Queue<Node> fe_bfs(Node s, Node e) 
 		{
