@@ -50,6 +50,12 @@ namespace Grandma
             this.test = new System.Windows.Forms.Label();
             this.test2 = new System.Windows.Forms.Label();
             this.tbFER = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbFR = new System.Windows.Forms.TextBox();
+            this.labelFR = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -198,7 +204,7 @@ namespace Grandma
             // labelFER
             // 
             this.labelFER.AutoSize = true;
-            this.labelFER.Location = new System.Drawing.Point(40, 670);
+            this.labelFER.Location = new System.Drawing.Point(40, 725);
             this.labelFER.Name = "labelFER";
             this.labelFER.Size = new System.Drawing.Size(20, 17);
             this.labelFER.TabIndex = 17;
@@ -217,7 +223,7 @@ namespace Grandma
             // test
             // 
             this.test.AutoSize = true;
-            this.test.Location = new System.Drawing.Point(444, 567);
+            this.test.Location = new System.Drawing.Point(423, 499);
             this.test.Name = "test";
             this.test.Size = new System.Drawing.Size(46, 17);
             this.test.TabIndex = 19;
@@ -226,7 +232,7 @@ namespace Grandma
             // test2
             // 
             this.test2.AutoSize = true;
-            this.test2.Location = new System.Drawing.Point(516, 567);
+            this.test2.Location = new System.Drawing.Point(518, 499);
             this.test2.Name = "test2";
             this.test2.Size = new System.Drawing.Size(46, 17);
             this.test2.TabIndex = 20;
@@ -234,10 +240,62 @@ namespace Grandma
             // 
             // tbFER
             // 
-            this.tbFER.Location = new System.Drawing.Point(398, 621);
+            this.tbFER.Location = new System.Drawing.Point(426, 573);
             this.tbFER.Name = "tbFER";
             this.tbFER.Size = new System.Drawing.Size(367, 22);
             this.tbFER.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(423, 536);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 17);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Friend Recomm";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(423, 636);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 17);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Friend Explore";
+            // 
+            // tbFR
+            // 
+            this.tbFR.Location = new System.Drawing.Point(426, 670);
+            this.tbFR.Name = "tbFR";
+            this.tbFR.Size = new System.Drawing.Size(367, 22);
+            this.tbFR.TabIndex = 24;
+            // 
+            // labelFR
+            // 
+            this.labelFR.AutoSize = true;
+            this.labelFR.Location = new System.Drawing.Point(40, 670);
+            this.labelFR.Name = "labelFR";
+            this.labelFR.Size = new System.Drawing.Size(20, 17);
+            this.labelFR.TabIndex = 25;
+            this.labelFR.Text = "...";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(0, 670);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(30, 17);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "FR:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(1, 725);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(33, 17);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "FE: ";
             // 
             // Form1
             // 
@@ -245,6 +303,12 @@ namespace Grandma
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(861, 780);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.labelFR);
+            this.Controls.Add(this.tbFR);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tbFER);
             this.Controls.Add(this.test2);
             this.Controls.Add(this.test);
@@ -298,6 +362,12 @@ namespace Grandma
         private System.Windows.Forms.Label test;
         private System.Windows.Forms.Label test2;
         private System.Windows.Forms.TextBox tbFER;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox tbFR;
+        private System.Windows.Forms.Label labelFR;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }
 

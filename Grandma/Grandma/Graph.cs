@@ -232,11 +232,22 @@ namespace Grandma
 				// next level
 				curr_level++;
             }
-
 			return resNodes;
 		}
+
+		public string getResult_fr_bfs(Node[] N)
+        {
+			string res = " ";
+
+			foreach (var node in N)
+            {
+				res += node.name;
+            }
+
+			return res;
+        }
 		
-		public Queue<Node> fr_bfs(Node s, Node e) 
+		public Queue<Node> fe_bfs(Node s, Node e) 
 		{
 			Node[] prev = new Node[n_node];
 			prev = solve(s);
@@ -244,7 +255,7 @@ namespace Grandma
 			return reconstructPath(s,e,prev);
 		}
 
-		public string getResult_fr_bfs(Queue<Node> Q)
+		public string getResult_fe_bfs(Queue<Node> Q)
         {
 			string res = "";
 			int i = 0;
