@@ -183,34 +183,59 @@ namespace Grandma
             }
         }
 
-		public void bfs(Node n)
+		public Node[] bfs(Node n, Node end)
 		{
-			resetIsVisited(); // reset all isVisited to false
-			int nodeIdx = findIdxNode(n.name);
+			// declare resulting nodes array
+			Node[] resNodes = new Node[n_node];
+			
+			// reset all isVisited to false
+			resetIsVisited();
 
+			// visit level 0
+			int nodeIdx = findIdxNode(n.name);
 			nodes[nodeIdx].isVisited = true;
-			printNodeX(nodeIdx);
 			q.Enqueue(nodeIdx);
 
-			while (q.Count != 0)
+			// variabel integer 1 berguna untuk menandakan
+			// current level dari traversal graf dari node awal
+			int curr_level = 1;
+
+			// variabel untuk indeks insert array
+			int array_insert = 0;
+			
+			// while loop selagi masih ada yang di queue DAN
+			// current level masih di level ke 2 atau kurang
+			while (q.Count != 0 && curr_level <= 2)
             {
+				// get current node that is visited
 				nodeIdx = q.Dequeue();
 
-				if (nodes[nodeIdx].isVisited == false)
+				// get all adjacent nodes
+				for (int i = 0; i < nodes.Length; i++)
                 {
-					nodes[nodeIdx].isVisited = true;
-
-					int adjNodeIdx = 0;
-
-					while (adjNodeIdx != -1)
+					// apabila ada penghubung, di level 2, DAN adj node = ending node
+					if (m[nodeIdx, i] == 1 && nodes[i].name == end.name && curr_level == 2)
                     {
-						adjNodeIdx = getAdjNode(nodeIdx);
-						q.Enqueue(adjNodeIdx);
+						// adding node that is mutual friends to resulting array
+						resNodes[array_insert] = nodes[nodeIdx];
+						array_insert++;
+                    }
+					// apabila ada penghubung, dan belum dikunjungi
+					if (m[nodeIdx, i] == 1 && (!nodes[i].isVisited))
+                    {
+						// adding adj node to queue and setting visited to true
+						q.Enqueue(i);
+						nodes[i].isVisited = true;
                     }
                 }
+
+				// next level
+				curr_level++;
             }
 
+			return resNodes;
 		}
+		
 		public Queue<Node> fr_bfs(Node s, Node e) 
 		{
 			Node[] prev = new Node[n_node];
