@@ -34,8 +34,8 @@ namespace Grandma
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbDFS = new System.Windows.Forms.RadioButton();
+            this.rbBFS = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -43,19 +43,11 @@ namespace Grandma
             this.pGambar = new System.Windows.Forms.Panel();
             this.dropdownAcc = new System.Windows.Forms.ComboBox();
             this.dropdownFriend = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelResultTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelFER = new System.Windows.Forms.Label();
             this.buttonRun = new System.Windows.Forms.Button();
-            this.test = new System.Windows.Forms.Label();
-            this.test2 = new System.Windows.Forms.Label();
-            this.tbFER = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tbFR = new System.Windows.Forms.TextBox();
-            this.labelFR = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.labelAlgorithm = new System.Windows.Forms.Label();
+            this.tbResult = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,32 +86,32 @@ namespace Grandma
             this.label5.TabIndex = 3;
             this.label5.Text = "Graph file:";
             // 
-            // radioButton1
+            // rbDFS
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(149, 102);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(56, 21);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "DFS";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbDFS.AutoSize = true;
+            this.rbDFS.Location = new System.Drawing.Point(149, 102);
+            this.rbDFS.Name = "rbDFS";
+            this.rbDFS.Size = new System.Drawing.Size(56, 21);
+            this.rbDFS.TabIndex = 4;
+            this.rbDFS.TabStop = true;
+            this.rbDFS.Text = "DFS";
+            this.rbDFS.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbBFS
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(235, 102);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(55, 21);
-            this.radioButton2.TabIndex = 5;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "BFS";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbBFS.AutoSize = true;
+            this.rbBFS.Location = new System.Drawing.Point(235, 102);
+            this.rbBFS.Name = "rbBFS";
+            this.rbBFS.Size = new System.Drawing.Size(55, 21);
+            this.rbBFS.TabIndex = 5;
+            this.rbBFS.TabStop = true;
+            this.rbBFS.Text = "BFS";
+            this.rbBFS.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(40, 506);
+            this.label6.Location = new System.Drawing.Point(41, 462);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(138, 17);
             this.label6.TabIndex = 6;
@@ -128,7 +120,7 @@ namespace Grandma
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(40, 551);
+            this.label7.Location = new System.Drawing.Point(41, 507);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(142, 17);
             this.label7.TabIndex = 7;
@@ -158,7 +150,7 @@ namespace Grandma
             this.pGambar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pGambar.Location = new System.Drawing.Point(39, 152);
             this.pGambar.Name = "pGambar";
-            this.pGambar.Size = new System.Drawing.Size(772, 323);
+            this.pGambar.Size = new System.Drawing.Size(772, 284);
             this.pGambar.TabIndex = 13;
             // 
             // dropdownAcc
@@ -166,7 +158,7 @@ namespace Grandma
             this.dropdownAcc.FormattingEnabled = true;
             this.dropdownAcc.Items.AddRange(new object[] {
             "Masukkan file"});
-            this.dropdownAcc.Location = new System.Drawing.Point(188, 499);
+            this.dropdownAcc.Location = new System.Drawing.Point(189, 455);
             this.dropdownAcc.Name = "dropdownAcc";
             this.dropdownAcc.Size = new System.Drawing.Size(121, 24);
             this.dropdownAcc.TabIndex = 14;
@@ -176,20 +168,21 @@ namespace Grandma
             this.dropdownFriend.FormattingEnabled = true;
             this.dropdownFriend.Items.AddRange(new object[] {
             "Masukkan file"});
-            this.dropdownFriend.Location = new System.Drawing.Point(188, 548);
+            this.dropdownFriend.Location = new System.Drawing.Point(189, 504);
             this.dropdownFriend.Name = "dropdownFriend";
             this.dropdownFriend.Size = new System.Drawing.Size(121, 24);
             this.dropdownFriend.TabIndex = 15;
             // 
-            // label3
+            // labelResultTitle
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(40, 636);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(238, 17);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Friend recommendation for      :";
+            this.labelResultTitle.AutoSize = true;
+            this.labelResultTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResultTitle.Location = new System.Drawing.Point(855, 60);
+            this.labelResultTitle.Name = "labelResultTitle";
+            this.labelResultTitle.Size = new System.Drawing.Size(238, 17);
+            this.labelResultTitle.TabIndex = 8;
+            this.labelResultTitle.Text = "Friend recommendation for      :";
+            this.labelResultTitle.Visible = false;
             // 
             // pictureBox1
             // 
@@ -201,18 +194,9 @@ namespace Grandma
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
-            // labelFER
-            // 
-            this.labelFER.AutoSize = true;
-            this.labelFER.Location = new System.Drawing.Point(40, 725);
-            this.labelFER.Name = "labelFER";
-            this.labelFER.Size = new System.Drawing.Size(20, 17);
-            this.labelFER.TabIndex = 17;
-            this.labelFER.Text = "...";
-            // 
             // buttonRun
             // 
-            this.buttonRun.Location = new System.Drawing.Point(43, 596);
+            this.buttonRun.Location = new System.Drawing.Point(44, 552);
             this.buttonRun.Name = "buttonRun";
             this.buttonRun.Size = new System.Drawing.Size(75, 23);
             this.buttonRun.TabIndex = 18;
@@ -220,111 +204,47 @@ namespace Grandma
             this.buttonRun.UseVisualStyleBackColor = true;
             this.buttonRun.Click += new System.EventHandler(this.buttonRun_Click);
             // 
-            // test
+            // labelAlgorithm
             // 
-            this.test.AutoSize = true;
-            this.test.Location = new System.Drawing.Point(423, 499);
-            this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(46, 17);
-            this.test.TabIndex = 19;
-            this.test.Text = "label1";
+            this.labelAlgorithm.AutoSize = true;
+            this.labelAlgorithm.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAlgorithm.Location = new System.Drawing.Point(855, 85);
+            this.labelAlgorithm.Name = "labelAlgorithm";
+            this.labelAlgorithm.Size = new System.Drawing.Size(75, 17);
+            this.labelAlgorithm.TabIndex = 19;
+            this.labelAlgorithm.Text = "Algorithm: ";
+            this.labelAlgorithm.Visible = false;
             // 
-            // test2
+            // tbResult
             // 
-            this.test2.AutoSize = true;
-            this.test2.Location = new System.Drawing.Point(518, 499);
-            this.test2.Name = "test2";
-            this.test2.Size = new System.Drawing.Size(46, 17);
-            this.test2.TabIndex = 20;
-            this.test2.Text = "label1";
-            // 
-            // tbFER
-            // 
-            this.tbFER.Location = new System.Drawing.Point(426, 573);
-            this.tbFER.Name = "tbFER";
-            this.tbFER.Size = new System.Drawing.Size(367, 22);
-            this.tbFER.TabIndex = 21;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(423, 536);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 17);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Friend Recomm";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(423, 636);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 17);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Friend Explore";
-            // 
-            // tbFR
-            // 
-            this.tbFR.Location = new System.Drawing.Point(426, 670);
-            this.tbFR.Name = "tbFR";
-            this.tbFR.Size = new System.Drawing.Size(367, 22);
-            this.tbFR.TabIndex = 24;
-            // 
-            // labelFR
-            // 
-            this.labelFR.AutoSize = true;
-            this.labelFR.Location = new System.Drawing.Point(40, 670);
-            this.labelFR.Name = "labelFR";
-            this.labelFR.Size = new System.Drawing.Size(20, 17);
-            this.labelFR.TabIndex = 25;
-            this.labelFR.Text = "...";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(0, 670);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(30, 17);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "FR:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1, 725);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(33, 17);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "FE: ";
+            this.tbResult.Location = new System.Drawing.Point(858, 112);
+            this.tbResult.Multiline = true;
+            this.tbResult.Name = "tbResult";
+            this.tbResult.Size = new System.Drawing.Size(363, 656);
+            this.tbResult.TabIndex = 20;
+            this.tbResult.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ClientSize = new System.Drawing.Size(861, 780);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.labelFR);
-            this.Controls.Add(this.tbFR);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbFER);
-            this.Controls.Add(this.test2);
-            this.Controls.Add(this.test);
+            this.ClientSize = new System.Drawing.Size(1234, 780);
+            this.Controls.Add(this.tbResult);
+            this.Controls.Add(this.labelAlgorithm);
             this.Controls.Add(this.buttonRun);
-            this.Controls.Add(this.labelFER);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dropdownFriend);
             this.Controls.Add(this.dropdownAcc);
             this.Controls.Add(this.pGambar);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelResultTitle);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rbBFS);
+            this.Controls.Add(this.rbDFS);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -346,8 +266,8 @@ namespace Grandma
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbDFS;
+        private System.Windows.Forms.RadioButton rbBFS;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
@@ -355,19 +275,11 @@ namespace Grandma
         private System.Windows.Forms.Panel pGambar;
         private System.Windows.Forms.ComboBox dropdownAcc;
         private System.Windows.Forms.ComboBox dropdownFriend;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelResultTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label labelFER;
         private System.Windows.Forms.Button buttonRun;
-        private System.Windows.Forms.Label test;
-        private System.Windows.Forms.Label test2;
-        private System.Windows.Forms.TextBox tbFER;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox tbFR;
-        private System.Windows.Forms.Label labelFR;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label labelAlgorithm;
+        private System.Windows.Forms.TextBox tbResult;
     }
 }
 

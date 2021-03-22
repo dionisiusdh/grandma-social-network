@@ -231,23 +231,28 @@ namespace Grandma
 			return resNodeIdx;
 		}
 
-		public string getResult_fr_bfs(int[] N)
+		public string getResult_fr(int[] N)
 		{
 			string res = "";
 
-			foreach (int nodeIdx in N)
-			{
+			for (int i=0; i<N.Length; i++)
+            {
+				int nodeIdx = N[i];
 				if (nodeIdx != -1)
 				{
 					res += nodes[nodeIdx].name;
-					res += " ";
+					
+					if (i != N.Length-1)
+					{
+						res += ",";
+					}
 				}
 			}
 
 			return res;
 		}
 		
-		public string getResult_fe_bfs(Queue<Node> Q)
+		public string getResult_fe(Queue<Node> Q)
         {
 			string res = "";
 			int i = 0;
@@ -301,6 +306,10 @@ namespace Grandma
 			//Memasukkan isi dari stack ke dalam queue
 			foreach (Node n in temp.Reverse())
 			{
+				//if (n != s)
+				//{
+				//	hasil.Enqueue(n);
+				//}
 				hasil.Enqueue(n);
 			}
 			return hasil;

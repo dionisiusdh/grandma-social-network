@@ -52,7 +52,7 @@ namespace Grandma
             G.initEdges(lines);
 
             // Update dropdown items
-            string [] all_nodes = G.getAllNodesInArray();
+            string[] all_nodes = G.getAllNodesInArray();
             dropdownAcc.Items.Clear();
             dropdownFriend.Items.Clear();
 
@@ -77,7 +77,7 @@ namespace Grandma
             openfile.Filter = "All files (*.*)|*.*|All files (*.*)|*.*";
             openfile.FilterIndex = 2;
             openfile.RestoreDirectory = true;
-            
+
             // Update label
             if (openfile.ShowDialog() == DialogResult.OK)
             {
@@ -95,29 +95,103 @@ namespace Grandma
         private void buttonRun_Click(object sender, EventArgs e)
         {
             //  Init fromNode and toNode
-            
             string fromName = dropdownAcc.GetItemText(this.dropdownAcc.SelectedItem);
             string toName = dropdownFriend.GetItemText(this.dropdownFriend.SelectedItem);
+
+            bool isDFS = rbDFS.Checked;
+
+            if (isDFS)
+            {
+                labelAlgorithm.Text = "Algorithm: DFS";
+                labelAlgorithm.Visible = true;
+            }
+            else
+            {
+                labelAlgorithm.Text = "Algorithm: BFS";
+                labelAlgorithm.Visible = true;
+            }
 
             Node fromNode = new Node(fromName);
             Node toNode = new Node(toName);
 
-            // Friend explore
+            labelResultTitle.Text = "Friend Recommendation for " + fromName + ": ";
+            labelResultTitle.Visible = true;
 
-            //string fe_result = g.getresult_fe_bfs(g.fe_bfs(fromNode, toNode));
+            tbResult.Visible = true;
 
-            //test.Text = fromName;
-            //test2.Text = toName;
-            //labelFER.Text = fe_result;
-            //tbFER.Text = g.buatdebug;
+            // --- Friend explore ---
+            string FEResult = " [ ";
+            Queue<Node> QRes;
 
-            // Friend Recommendation
+            if (isDFS)
+            {
+                Queue<Node> QRes2 = G.fe_dfs(fromNode, toNode);
+                QRes = QRes2;
+                FEResult += G.getResult_fe(QRes2);
+            }
+            else
+            {
+                Queue<Node> QRes2 = G.fe_bfs(fromNode, toNode);
+                QRes = QRes2;
+                FEResult += G.getResult_fe(QRes2);
+            }
+
+            int n_degree = QRes.Count - 2;
+            if (n_degree == 0)
+            {
+                FEResult += " (" + n_degree + "-degree connection)";
+            }
+            else if (n_degree == 1)
+            {
+                FEResult += " (" + n_degree + "st-degree connection)";
+            }
+            else if (n_degree == 2)
+            {
+                FEResult += " (" + n_degree + "nd-degree connection)";
+            }
+            else if (n_degree == 3)
+            {
+                FEResult += " (" + n_degree + "rd-degree connection)";
+            }
+            else
+            {
+                FEResult += " (" + n_degree + "th-degree connection)";
+            }
+
+            FEResult += " ] ";
+
+            // --- Friend Recommendation ---
             // Main Program untuk Friend Recommendation dengan BFS
+            string FRResult = "";
+            string CurrResult = "";
+            int CurrResultLen = 0;
 
-            string FRResult = G.getResult_fr_bfs(G.bfs(fromNode, toNode));
+            foreach (var node in G.getAllNodesInArray())
+            {
+                if (node != fromName)
+                {
+                    CurrResult = G.getResult_fr(G.bfs(fromNode, new Node(node)));
+                    CurrResultLen = CurrResult.Split(',').Length - 1;
 
-            labelFR.Text = FRResult;
-            tbFR.Text = G.buatDebug;
+                    FRResult += "o " + node;
+
+                    if (CurrResult != "")
+                    {
+                        if (node == toName)
+                        {
+                            FRResult += FEResult;
+                        }
+                        FRResult += "\r\n" + CurrResultLen + " Mutual Friend(s)";
+                        FRResult += "\r\n" + CurrResult;
+                    } else
+                    {
+                        FRResult += "\r\nTidak ada mutual friends";
+                    }
+                    FRResult += "\r\n";
+                }
+                FRResult += "\r\n";
+            }
+            tbResult.Text = FRResult;
         }
     }
 }
