@@ -54,8 +54,6 @@ namespace Grandma
             //Mencetak hasil graf dan DFS
             Console.WriteLine("Nodes:");
             G.printAllNodes();
-            Console.WriteLine("Visits: ");
-            G.dfs();
             Console.ReadLine();
         }
     }

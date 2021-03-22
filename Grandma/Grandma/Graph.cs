@@ -14,8 +14,6 @@ namespace Grandma
 		private int[,] m;                                   // Adjacency matrix
 		public string buatDebug;
 
-		// Stack algoritma dfs
-		private Stack<int> s;
 		// Queue algoritma bfs
 		private Queue<int> q;
 
@@ -23,7 +21,6 @@ namespace Grandma
 		{
 			n_max = max;
 			n_node = 0;
-			s = new Stack<int>();
 			nodes = new Node[n_max];
 			m = new int[n_max, n_max];
 		}
@@ -145,10 +142,12 @@ namespace Grandma
 				}
 			}
 		}
+
 		public void sortNode()
 		{
 			Array.Sort(nodes, delegate (Node x, Node y) { return x.name.CompareTo(y.name); });
 		}
+
 		public void initEdges(string[] input) 
 		{
 			foreach (String line in input)
@@ -160,28 +159,6 @@ namespace Grandma
 				}
 			}
 		}
-		public void dfs()
-        {
-			resetIsVisited();			// reset all isVisited to false
-			nodes[0].isVisited = true;  // Mulai dari node 0
-			printNodeX(0);
-			s.Push(0);
-
-			while (s.Count != 0)
-            {
-                int curr_node = getAdjNode(s.Peek());
-
-				if (curr_node == -1)
-                {
-                    s.Pop();
-                } else
-                {
-                    nodes[curr_node].isVisited = true;
-                    printNodeX(curr_node);
-                    s.Push(curr_node);
-                }
-            }
-        }
 
 		public void initArray(int[] arr)
 		{
@@ -270,13 +247,6 @@ namespace Grandma
 			return res;
 		}
 		
-		public Queue<Node> fe_bfs(Node s, Node e) 
-		{
-			Node[] prev = new Node[n_node];
-			prev = solve(s);
-			return reconstructPath(s,e,prev);
-		}
-
 		public string getResult_fe_bfs(Queue<Node> Q)
         {
 			string res = "";
@@ -295,6 +265,53 @@ namespace Grandma
 
 			return res;
         }
+
+		public Queue<Node> fe_dfs(Node s, Node e)
+		{
+			bool found = false;
+			resetIsVisited();								// reset all isVisited to false
+			nodes[findIdxNode(s.name)].isVisited = true;	// Mulai dari node start
+			Stack<Node> temp = new Stack<Node>();			// Stack hasil berisi node-node
+			temp.Push(s);                                   // Push element pertama stack
+			Queue<Node> hasil = new Queue<Node>();
+
+			while ((temp.Count != 0) && !found)
+			{
+				int curr_node = getAdjNode(findIdxNode(temp.Peek().name));
+
+				if (curr_node == -1)
+				{
+					temp.Pop();
+				}
+				else
+				{
+					if (nodes[curr_node].name == e.name)
+					{
+						found = true;
+						temp.Push(nodes[curr_node]);
+					}
+					else
+					{
+						nodes[curr_node].isVisited = true;
+						temp.Push(nodes[curr_node]);
+					}
+				}
+			}
+
+			//Memasukkan isi dari stack ke dalam queue
+			foreach (Node n in temp.Reverse())
+			{
+				hasil.Enqueue(n);
+			}
+			return hasil;
+		}
+
+		public Queue<Node> fe_bfs(Node s, Node e) 
+		{
+			Node[] prev = new Node[n_node];
+			prev = solve(s);
+			return reconstructPath(s,e,prev);
+		}
 
 		public Queue<Node> getNeighbour (Node e) 
 		{ 
