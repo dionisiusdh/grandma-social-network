@@ -18,6 +18,7 @@ namespace Grandma
         public Form1()
         {
             InitializeComponent();
+            this.BackColor = Color.FromArgb(254, 254, 152); // this should be yellow-ish
         }
 
         private void handleGraphFile()
