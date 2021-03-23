@@ -280,22 +280,24 @@ namespace Grandma
 			temp.Push(s);                                   // Push element pertama stack
 			Queue<Node> hasil = new Queue<Node>();
 
+			//Lakukan operasi sampai node end sudah ditemukan atau semua node sudah dikunjungi
 			while ((temp.Count != 0) && !found)
 			{
+				//curr_node diisi dengan simpul anak dari top stack yang belum dikunjungi
 				int curr_node = getAdjNode(findIdxNode(temp.Peek().name));
 
-				if (curr_node == -1)
+				if (curr_node == -1) //Kalau tidak ada simpul anak dari curr_node yang lom dikunjungi maka backtrack
 				{
 					temp.Pop();
 				}
 				else
 				{
-					if (nodes[curr_node].name == e.name)
+					if (nodes[curr_node].name == e.name) //Kalau curr_node adalah simpul end maka hentikan proses
 					{
 						found = true;
 						temp.Push(nodes[curr_node]);
 					}
-					else
+					else //Kalau curr_node bukan simpul end maka lakukan operasi yang sama ke simpul curr_node
 					{
 						nodes[curr_node].isVisited = true;
 						temp.Push(nodes[curr_node]);
@@ -322,7 +324,7 @@ namespace Grandma
 			return reconstructPath(s,e,prev);
 		}
 
-		public Queue<Node> getNeighbour (Node e) 
+		public Queue<Node> getNeighbour (Node e)
 		{ 
 			Queue<Node> neighbor = new Queue<Node>();
 			for (int i =0; i<n_node; i++) 
@@ -365,21 +367,22 @@ namespace Grandma
 		public Queue<Node> reconstructPath(Node s, Node e, Node[] prev) 
 		{ 
 			Queue<Node> path = new Queue<Node>();
+			//Cari hasil dengan menulusuri simpul dari e sampai simpul s
 			for (Node at=e; at!=null; at = prev[findIdxNode(at.name)]) 
 			{ 
 				path.Enqueue(at);
 			}
 			Queue<Node> hasil = new Queue<Node>();
-			foreach (Node n in path.Reverse()) 
+			foreach (Node n in path.Reverse()) //Hasil yang ada dibalik
 			{ 
 				hasil.Enqueue(n);
 			}
 			
-			if (hasil.Peek() == s)
+			if (hasil.Peek() == s) //Kalau berhasil mendapatkan jalur atau hasil dimulai dari simpul s
 			{ 
 				return hasil;
 			}
-            else 
+            else //Kalau tidak maka kembalikan queue kosong
 			{ 
 				hasil.Clear();
 				return hasil;
