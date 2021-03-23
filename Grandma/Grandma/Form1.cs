@@ -170,7 +170,7 @@ namespace Grandma
             {
                 if (node != fromName)
                 {
-                    CurrResult = G.getResult_fr(G.bfs(fromNode, new Node(node)));
+                    CurrResult = G.getResult_fr(fromNode, G.fr(fromNode));
                     CurrResultLen = CurrResult.Split(',').Length - 1;
 
                     FRResult += "o " + node;

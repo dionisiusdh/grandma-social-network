@@ -168,7 +168,7 @@ namespace Grandma
 			}
 		}
 
-		public int[] bfs(Node n, Node end)
+		public int[] cari_mutual(Node n, Node end)
 		{
 			// declare resulting nodes array and queue
 			Queue<int> q = new Queue<int>();
@@ -231,22 +231,79 @@ namespace Grandma
 			return resNodeIdx;
 		}
 
-		public string getResult_fr(int[] N)
+		public Node[] fr(Node s)
+		{
+			//Inisialisasi
+			resetIsVisited();
+			Queue<Node> teman = new Queue<Node>(); //Queue daftar teman dari node s
+			s.isVisited = true;
+			teman = getNeighbour(s);
+			foreach (Node tem in teman)
+			{
+				tem.isVisited = true; //Menandai daftar teman dari node s sebagai sudah dikunjungi
+			}
+
+			//Mencari rekomendasi teman dari s dan menambahkannya di queue rekom
+			Queue<Node> rekom = new Queue<Node>(); //Queue rekomendasi teman untuk s 
+			while (teman.Count != 0)
+			{
+				int curr_node = getAdjNode(findIdxNode(teman.Peek().name)); //Mencari indeks teman dari elemen pertama queue teman yang lom dikunjungi
+				while (curr_node != -1)
+				{
+					nodes[curr_node].isVisited = true; //Menandai node yang dikunjungi sebagai sudah dikunjungi
+					rekom.Enqueue(nodes[curr_node]); //Menambahkan semua teman dari temannya s
+					curr_node = getAdjNode(findIdxNode(teman.Peek().name)); //Next element
+				}
+				teman.Dequeue(); //Menghapus elemen pertama dari queue teman yang tetangganya sudah dikunjungi semua
+			}
+
+			//Membuat sebuah array yang berisi jumlah mutual dari node rekomendasi
+			int[] jmlh_mutual = new int[rekom.Count];
+			int i = 0;
+			foreach (Node rek in rekom)
+			{
+				jmlh_mutual[i] = cari_mutual(s, rek).Count(a => a!=-1); //Mengisi elemen jmlh_mutual dengan jumlah teman yang mutual
+				//jumlah teman mutual dicari dari fungsi cari mutual dan dihitung semua elemennya yang bukan -1
+				i++;
+			}
+
+			//Sorting urutan rekomendasi friend dan menaruhnya di array hasil
+			Node[] hasil = rekom.ToArray(); //Array hasil yang dikonversi dari array rekom agar bisa ditukar elemen-elemennya
+			int n = jmlh_mutual.Count(a => a != -1);
+			for (i = 0; i < n - 1; i++){
+				// Cari elemen maksimum dari array jumlah
+				int max_idx = i;
+				for (int j = i + 1; j < n; j++)
+					if (jmlh_mutual[j] > jmlh_mutual[max_idx])
+						max_idx = j;
+				// Tukar elemen di array jumlah mutual dan di array hasil sehingga terurut menurun jumlah mutualnya
+				int temp1 = jmlh_mutual[max_idx];
+				jmlh_mutual[max_idx] = jmlh_mutual[i];
+				jmlh_mutual[i] = temp1;
+				Node temp2 = hasil[max_idx];
+				hasil[max_idx] = hasil[i];
+				hasil[i] = temp2;
+			}
+
+			return hasil;
+		}
+
+		public string getResult_fr(Node s, Node[] N)
 		{
 			string res = "";
 
 			for (int i=0; i<N.Length; i++)
             {
-				int nodeIdx = N[i];
-				if (nodeIdx != -1)
+				res += "Nama Akun : " + N[i].name + "\n";
+				int[] mutual = cari_mutual(s, N[i]);
+				res += mutual.Count(n => n != -1) + " mutual friends: \n";
+				int j = 0;
+				while (j < mutual.Count(n => n != -1) - 1) 
 				{
-					res += nodes[nodeIdx].name;
-					
-					if (i != N.Length-1)
-					{
-						res += ",";
-					}
+					res += nodes[mutual[j]].name + ",";
+					j++;
 				}
+				res += nodes[mutual[j]].name + "\n\n";
 			}
 
 			return res;
