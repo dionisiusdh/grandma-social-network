@@ -166,31 +166,48 @@ namespace Grandma
             string CurrResult = "";
             int CurrResultLen = 0;
 
-            foreach (var node in G.getAllNodesInArray())
+            foreach (Node node in G.fr(fromNode))
             {
-                if (node != fromName)
+                // bukan node awal/starting
+                if (node.name != fromName)
                 {
-                    CurrResult = G.getResult_fr(fromNode, G.fr(fromNode));
-                    CurrResultLen = CurrResult.Split(',').Length - 1;
+                    // panggil fungsi get result fr
+                    // untuk mendapatkan string array mutual friends
+                    CurrResult = G.getResult_fr(fromNode, node);
+                    // kalkulasi banyaknya mutual friends dengan split string
+                    CurrResultLen = CurrResult.Split(',').Length;
 
-                    FRResult += "o " + node;
+                    // template cetak nama node To
+                    FRResult += "• " + node.name;
 
+                    // apabila tidak kosong
                     if (CurrResult != "")
+                    { 
+                        if (node.name == toName)
+                        {
+                            // tambahkan hasil friend explore ke baris FR
+                            FRResult += FEResult;
+                        }
+                        // cetak mutual friends
+                        FRResult += "\r\n" + CurrResultLen + " Mutual Friend(s)";
+                        FRResult += "\r\n" + CurrResult;
+                    }
+                    else // kasus tidak ada mutual friends
                     {
-                        if (node == toName)
+                        if (node.name == toName)
                         {
                             FRResult += FEResult;
                         }
-                        FRResult += "\r\n" + CurrResultLen + " Mutual Friend(s)";
-                        FRResult += "\r\n" + CurrResult;
-                    } else
-                    {
                         FRResult += "\r\nTidak ada mutual friends";
                     }
                     FRResult += "\r\n";
                 }
                 FRResult += "\r\n";
             }
+
+            // enable property scrolling
+            tbResult.ScrollBars = ScrollBars.Vertical;
+            // ganti textbox dengan FRResult
             tbResult.Text = FRResult;
         }
     }
