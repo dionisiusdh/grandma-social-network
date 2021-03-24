@@ -44,40 +44,35 @@ namespace Grandma
             this.dropdownAcc = new System.Windows.Forms.ComboBox();
             this.dropdownFriend = new System.Windows.Forms.ComboBox();
             this.labelResultTitle = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonRun = new System.Windows.Forms.Button();
             this.labelAlgorithm = new System.Windows.Forms.Label();
             this.tbResult = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // title
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.Location = new System.Drawing.Point(213, 18);
-            this.title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.title.Location = new System.Drawing.Point(284, 22);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(113, 29);
+            this.title.Size = new System.Drawing.Size(142, 38);
             this.title.TabIndex = 0;
             this.title.Text = "Grandma";
             // 
             // label2
             // 
             this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 19);
+            this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(28, 109);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(37, 134);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 16);
+            this.label4.Size = new System.Drawing.Size(74, 18);
             this.label4.TabIndex = 2;
             this.label4.Text = "Algorithm:";
             // 
@@ -85,10 +80,9 @@ namespace Grandma
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(28, 73);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(37, 90);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 16);
+            this.label5.Size = new System.Drawing.Size(74, 18);
             this.label5.TabIndex = 3;
             this.label5.Text = "Graph file:";
             // 
@@ -96,10 +90,10 @@ namespace Grandma
             // 
             this.rbDFS.AutoSize = true;
             this.rbDFS.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDFS.Location = new System.Drawing.Point(111, 107);
-            this.rbDFS.Margin = new System.Windows.Forms.Padding(2);
+            this.rbDFS.Location = new System.Drawing.Point(122, 132);
+            this.rbDFS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbDFS.Name = "rbDFS";
-            this.rbDFS.Size = new System.Drawing.Size(44, 20);
+            this.rbDFS.Size = new System.Drawing.Size(52, 22);
             this.rbDFS.TabIndex = 4;
             this.rbDFS.TabStop = true;
             this.rbDFS.Text = "DFS";
@@ -109,10 +103,10 @@ namespace Grandma
             // 
             this.rbBFS.AutoSize = true;
             this.rbBFS.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbBFS.Location = new System.Drawing.Point(178, 107);
-            this.rbBFS.Margin = new System.Windows.Forms.Padding(2);
+            this.rbBFS.Location = new System.Drawing.Point(211, 132);
+            this.rbBFS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbBFS.Name = "rbBFS";
-            this.rbBFS.Size = new System.Drawing.Size(43, 20);
+            this.rbBFS.Size = new System.Drawing.Size(51, 22);
             this.rbBFS.TabIndex = 5;
             this.rbBFS.TabStop = true;
             this.rbBFS.Text = "BFS";
@@ -122,10 +116,9 @@ namespace Grandma
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(28, 366);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(38, 502);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 16);
+            this.label6.Size = new System.Drawing.Size(138, 18);
             this.label6.TabIndex = 6;
             this.label6.Text = "Choose account      :";
             // 
@@ -133,10 +126,9 @@ namespace Grandma
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(293, 366);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(392, 502);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(118, 16);
+            this.label7.Size = new System.Drawing.Size(149, 18);
             this.label7.TabIndex = 7;
             this.label7.Text = "Explore friends with : ";
             // 
@@ -144,10 +136,10 @@ namespace Grandma
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(111, 71);
+            this.button1.Location = new System.Drawing.Point(122, 82);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 21);
+            this.button1.Size = new System.Drawing.Size(75, 26);
             this.button1.TabIndex = 10;
             this.button1.Text = "Browse";
             this.button1.UseVisualStyleBackColor = true;
@@ -157,20 +149,19 @@ namespace Grandma
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(175, 73);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(207, 90);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(20, 16);
+            this.label9.Size = new System.Drawing.Size(23, 18);
             this.label9.TabIndex = 11;
             this.label9.Text = "...";
             // 
             // pGambar
             // 
             this.pGambar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pGambar.Location = new System.Drawing.Point(30, 147);
-            this.pGambar.Margin = new System.Windows.Forms.Padding(2);
+            this.pGambar.Location = new System.Drawing.Point(40, 181);
+            this.pGambar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pGambar.Name = "pGambar";
-            this.pGambar.Size = new System.Drawing.Size(466, 191);
+            this.pGambar.Size = new System.Drawing.Size(621, 290);
             this.pGambar.TabIndex = 13;
             // 
             // dropdownAcc
@@ -179,10 +170,10 @@ namespace Grandma
             this.dropdownAcc.FormattingEnabled = true;
             this.dropdownAcc.Items.AddRange(new object[] {
             "Masukkan file"});
-            this.dropdownAcc.Location = new System.Drawing.Point(139, 363);
-            this.dropdownAcc.Margin = new System.Windows.Forms.Padding(2);
+            this.dropdownAcc.Location = new System.Drawing.Point(186, 499);
+            this.dropdownAcc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dropdownAcc.Name = "dropdownAcc";
-            this.dropdownAcc.Size = new System.Drawing.Size(92, 24);
+            this.dropdownAcc.Size = new System.Drawing.Size(121, 26);
             this.dropdownAcc.TabIndex = 14;
             // 
             // dropdownFriend
@@ -191,44 +182,30 @@ namespace Grandma
             this.dropdownFriend.FormattingEnabled = true;
             this.dropdownFriend.Items.AddRange(new object[] {
             "Masukkan file"});
-            this.dropdownFriend.Location = new System.Drawing.Point(404, 363);
-            this.dropdownFriend.Margin = new System.Windows.Forms.Padding(2);
+            this.dropdownFriend.Location = new System.Drawing.Point(540, 499);
+            this.dropdownFriend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dropdownFriend.Name = "dropdownFriend";
-            this.dropdownFriend.Size = new System.Drawing.Size(92, 24);
+            this.dropdownFriend.Size = new System.Drawing.Size(121, 26);
             this.dropdownFriend.TabIndex = 15;
             // 
             // labelResultTitle
             // 
             this.labelResultTitle.AutoSize = true;
             this.labelResultTitle.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResultTitle.Location = new System.Drawing.Point(28, 401);
-            this.labelResultTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelResultTitle.Location = new System.Drawing.Point(38, 546);
             this.labelResultTitle.Name = "labelResultTitle";
-            this.labelResultTitle.Size = new System.Drawing.Size(179, 16);
+            this.labelResultTitle.Size = new System.Drawing.Size(216, 18);
             this.labelResultTitle.TabIndex = 8;
             this.labelResultTitle.Text = "Friend recommendation for      :";
             this.labelResultTitle.Visible = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Grandma.Properties.Resources.grandma_800x6001;
-            this.pictureBox1.ImageLocation = "D:\\K. Stima\\Tugas\\Tubes 2\\new\\tubes-2-stima\\Grandma\\Grandma\\assets\\grandma-pic.pn" +
-    "g";
-            this.pictureBox1.Location = new System.Drawing.Point(426, 60);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 72);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
             // buttonRun
             // 
             this.buttonRun.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRun.Location = new System.Drawing.Point(440, 399);
+            this.buttonRun.Location = new System.Drawing.Point(588, 543);
             this.buttonRun.Margin = new System.Windows.Forms.Padding(0);
             this.buttonRun.Name = "buttonRun";
-            this.buttonRun.Size = new System.Drawing.Size(56, 21);
+            this.buttonRun.Size = new System.Drawing.Size(75, 26);
             this.buttonRun.TabIndex = 18;
             this.buttonRun.Text = "Run";
             this.buttonRun.UseVisualStyleBackColor = true;
@@ -238,35 +215,33 @@ namespace Grandma
             // 
             this.labelAlgorithm.AutoSize = true;
             this.labelAlgorithm.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAlgorithm.Location = new System.Drawing.Point(28, 421);
-            this.labelAlgorithm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelAlgorithm.Location = new System.Drawing.Point(38, 570);
             this.labelAlgorithm.Name = "labelAlgorithm";
-            this.labelAlgorithm.Size = new System.Drawing.Size(62, 16);
+            this.labelAlgorithm.Size = new System.Drawing.Size(78, 18);
             this.labelAlgorithm.TabIndex = 19;
             this.labelAlgorithm.Text = "Algorithm: ";
             this.labelAlgorithm.Visible = false;
             // 
             // tbResult
             // 
-            this.tbResult.Location = new System.Drawing.Point(30, 452);
-            this.tbResult.Margin = new System.Windows.Forms.Padding(2);
+            this.tbResult.Location = new System.Drawing.Point(41, 608);
+            this.tbResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbResult.Multiline = true;
             this.tbResult.Name = "tbResult";
-            this.tbResult.Size = new System.Drawing.Size(466, 183);
+            this.tbResult.Size = new System.Drawing.Size(620, 224);
             this.tbResult.TabIndex = 20;
             this.tbResult.Visible = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ClientSize = new System.Drawing.Size(536, 665);
+            this.ClientSize = new System.Drawing.Size(715, 876);
             this.Controls.Add(this.tbResult);
             this.Controls.Add(this.labelAlgorithm);
             this.Controls.Add(this.buttonRun);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dropdownFriend);
             this.Controls.Add(this.dropdownAcc);
             this.Controls.Add(this.pGambar);
@@ -282,12 +257,11 @@ namespace Grandma
             this.Controls.Add(this.label2);
             this.Controls.Add(this.title);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grandma | Social Network";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,7 +283,6 @@ namespace Grandma
         private System.Windows.Forms.ComboBox dropdownAcc;
         private System.Windows.Forms.ComboBox dropdownFriend;
         private System.Windows.Forms.Label labelResultTitle;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonRun;
         private System.Windows.Forms.Label labelAlgorithm;
         private System.Windows.Forms.TextBox tbResult;

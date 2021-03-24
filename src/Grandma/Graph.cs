@@ -376,12 +376,9 @@ namespace Grandma
 			//Memasukkan isi dari stack ke dalam queue
 			foreach (Node n in temp.Reverse())
 			{
-				//if (n != s)
-				//{
-				//	hasil.Enqueue(n);
-				//}
 				hasil.Enqueue(n);
 			}
+
 			return hasil;
 		}
 
