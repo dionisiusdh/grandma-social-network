@@ -20,6 +20,6 @@ Grandma Social Network merupakan sebuah jejaring sosial media yang memiliki fitu
 Tata cara penggunaan program, baik untuk menjalankan program atau mengkompilasi program, adalah sebagai berikut:
 * Untuk menjalankan program, dapat di-run secara langsung melalui file Grandma.exe yang terdapat pada direktori ./bin. 
 * Jika ingin meng-compile program, dapat dibuka file solution Grandma.sln pada ./src/Grandma/Grandma.sln dalam Visual Studio dan melakukan kompilasi dengan F5 atau CTRL + F5.
-Pastikan struktur folder sama dan tidak ada yang berubah terutama file data test yang digunakan daoat ditaruh dalam folder ./test/ atau menggunakan data test yang sudah ada
+* Pastikan struktur folder sama dan tidak ada yang berubah terutama file data test yang digunakan dapat ditaruh dalam folder ./test/ atau menggunakan data test yang sudah ada
 
 ## Thank you
