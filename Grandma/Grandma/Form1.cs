@@ -167,7 +167,7 @@ namespace Grandma
             string CurrResult = "";
             int CurrResultLen = 0;
 
-            foreach (Node node in G.fr(fromNode))
+            foreach (Node node in G.fr(fromNode, toNode))
             {
                 // bukan node awal/starting
                 if (node.name != fromName)
@@ -178,12 +178,12 @@ namespace Grandma
                     // kalkulasi banyaknya mutual friends dengan split string
                     CurrResultLen = CurrResult.Split(',').Length;
 
-                    // template cetak nama node To
-                    FRResult += "• " + node.name;
-
                     // apabila tidak kosong
                     if (CurrResult != "")
-                    { 
+                    {
+                        // template cetak nama node To
+                        FRResult += "• " + node.name;
+
                         if (node.name == toName)
                         {
                             // tambahkan hasil friend explore ke baris FR
@@ -192,18 +192,24 @@ namespace Grandma
                         // cetak mutual friends
                         FRResult += "\r\n" + CurrResultLen + " Mutual Friend(s)";
                         FRResult += "\r\n" + CurrResult;
+
+                        FRResult += "\r\n";
+                        FRResult += "\r\n";
                     }
                     else // kasus tidak ada mutual friends
                     {
                         if (node.name == toName)
-                        {
+                        {   
+                            // template cetak nama node To
+                            FRResult += "• " + node.name;
                             FRResult += FEResult;
+                            FRResult += "\r\nTidak ada mutual friends";
+
+                            FRResult += "\r\n";
+                            FRResult += "\r\n";
                         }
-                        FRResult += "\r\nTidak ada mutual friends";
                     }
-                    FRResult += "\r\n";
                 }
-                FRResult += "\r\n";
             }
 
             // enable property scrolling

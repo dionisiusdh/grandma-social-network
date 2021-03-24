@@ -76,3 +76,19 @@ D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.Form3.
 D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.csproj.CopyComplete
 D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.exe
 D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.pdb
+C:\Users\Nicholas\Desktop\Revid\Project Grandma\ten-grandma\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.csprojAssemblyReference.cache
+C:\Users\Nicholas\Desktop\Revid\Project Grandma\ten-grandma\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.Form1.resources
+C:\Users\Nicholas\Desktop\Revid\Project Grandma\ten-grandma\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.Form3.resources
+C:\Users\Nicholas\Desktop\Revid\Project Grandma\ten-grandma\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.Properties.Resources.resources
+C:\Users\Nicholas\Desktop\Revid\Project Grandma\ten-grandma\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.csproj.GenerateResource.cache
+C:\Users\Nicholas\Desktop\Revid\Project Grandma\ten-grandma\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.csproj.CoreCompileInputs.cache
+C:\Users\Nicholas\Desktop\Revid\Project Grandma\ten-grandma\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.exe
+C:\Users\Nicholas\Desktop\Revid\Project Grandma\ten-grandma\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.pdb
+C:\Users\Nicholas\Desktop\Revid\Project Grandma\ten-grandma\tubes-2-stima\Grandma\Grandma\bin\Debug\Grandma.exe.config
+C:\Users\Nicholas\Desktop\Revid\Project Grandma\ten-grandma\tubes-2-stima\Grandma\Grandma\bin\Debug\Grandma.exe
+C:\Users\Nicholas\Desktop\Revid\Project Grandma\ten-grandma\tubes-2-stima\Grandma\Grandma\bin\Debug\Grandma.pdb
+C:\Users\Nicholas\Desktop\Revid\Project Grandma\ten-grandma\tubes-2-stima\Grandma\Grandma\bin\Debug\AutomaticGraphLayout.dll
+C:\Users\Nicholas\Desktop\Revid\Project Grandma\ten-grandma\tubes-2-stima\Grandma\Grandma\bin\Debug\AutomaticGraphLayout.Drawing.dll
+C:\Users\Nicholas\Desktop\Revid\Project Grandma\ten-grandma\tubes-2-stima\Grandma\Grandma\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
+C:\Users\Nicholas\Desktop\Revid\Project Grandma\ten-grandma\tubes-2-stima\Grandma\Grandma\bin\Debug\Microsoft.Msagl.WpfGraphControl.dll
+C:\Users\Nicholas\Desktop\Revid\Project Grandma\ten-grandma\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.csproj.CopyComplete

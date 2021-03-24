@@ -231,19 +231,39 @@ namespace Grandma
 			return resNodeIdx;
 		}
 
-		public Node[] fr(Node s)
+		public Node[] fr(Node s, Node end)
 		{
+			// init initial neighbor list variable to store
+			// index of initial neigbors
+			var initialNeighborIdx = new List<int>();
+
+			// for loop to add initial neigbors to list
+			Queue<Node> initialNeighborNode = getNeighbour(s);
+			while (initialNeighborNode.Count > 0)
+            {
+				initialNeighborIdx.Add(findIdxNode(initialNeighborNode.Dequeue().name));
+            }
+
 			// buat List of tuple yang tiap tuplenya
 			// terdiri dari <int indexTo, int countMutual>
 			var allNodeMutual = new List<Tuple<int, int>>();
 			foreach (Node node in nodes)
             {
 				// tambahkan index node serta banyaknya mutual friend dari s ke node
-				allNodeMutual.Add(Tuple.Create(findIdxNode(node.name), cari_mutual(s, node).Count(a => a != -1)));
+				if (!initialNeighborIdx.Contains(findIdxNode(node.name)))
+				{
+					allNodeMutual.Add(Tuple.Create(findIdxNode(node.name), cari_mutual(s, node).Count(a => a != -1)));
+                }
             }
 
+			// tambahkan toNode karena tetap akan dicari mutual friendsnya
+			if (!allNodeMutual.Contains(Tuple.Create(findIdxNode(end.name), cari_mutual(s, end).Count(a => a != -1)))) 
+			{
+				allNodeMutual.Add(Tuple.Create(findIdxNode(end.name), cari_mutual(s, end).Count(a => a != -1)));
+			}
+
 			// Mensortir array berdasarkan int countMutual pada bagian tuple
-			int n = nodes.Length;
+			int n = allNodeMutual.Count;
 
 			// gerak boundary unsorted array
 			for (int i = 0; i < n - 1; i++)
