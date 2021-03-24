@@ -64,3 +64,15 @@ C:\Users\Nicholas\Desktop\Revid\Project Grandma\eight-grandma\tubes-2-stima\Gran
 C:\Users\Nicholas\Desktop\Revid\Project Grandma\eight-grandma\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.csproj.CopyComplete
 C:\Users\Nicholas\Desktop\Revid\Project Grandma\eight-grandma\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.exe
 C:\Users\Nicholas\Desktop\Revid\Project Grandma\eight-grandma\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.pdb
+D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\bin\Debug\Grandma.exe.config
+D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\bin\Debug\Grandma.exe
+D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\bin\Debug\Grandma.pdb
+D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\bin\Debug\AutomaticGraphLayout.dll
+D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\bin\Debug\AutomaticGraphLayout.Drawing.dll
+D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
+D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\bin\Debug\Microsoft.Msagl.WpfGraphControl.dll
+D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.Form1.resources
+D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.Form3.resources
+D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.csproj.CopyComplete
+D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.exe
+D:\K. Stima\Tugas\Tubes 2\tubes-2-stima\Grandma\Grandma\obj\Debug\Grandma.pdb
