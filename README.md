@@ -1,12 +1,14 @@
 # Grandma Social Network
 > A simple GUI-based social network with friend recommendation and exploration features
 
-### Made by
+## Made by
 | |
 | ---  |
 |Dionisius Darryl H.  |	
 |James Chandra |	
 |Jordan Daniel Joshua |
+
+![](./bin/demo.jpg)
 
 ## General info
 Grandma is a GUI-based social network with friend recommendation, exploration, and network visualization features developed using C# and .NET. This network is implemented with Graph and used algorithms such as Breadth-First Search (BFS) and Depth-First Search (DFS).
